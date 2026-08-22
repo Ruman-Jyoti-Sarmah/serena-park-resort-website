@@ -1,0 +1,194 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    
+    /* Nature-inspired luxury palette */
+    --background: 40 25% 97%;
+    --foreground: 150 15% 15%;
+    
+    --card: 40 30% 98%;
+    --card-foreground: 150 15% 15%;
+    
+    --popover: 40 30% 98%;
+    --popover-foreground: 150 15% 15%;
+    
+    /* Forest green primary */
+    --primary: 150 40% 35%;
+    --primary-foreground: 40 25% 97%;
+    
+    /* Warm beige secondary */
+    --secondary: 40 35% 75%;
+    --secondary-foreground: 150 15% 15%;
+    
+    --muted: 40 20% 92%;
+    --muted-foreground: 150 10% 45%;
+    
+    /* Soft gold accent */
+    --accent: 45 60% 88%;
+    --accent-foreground: 150 15% 15%;
+    
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 40 25% 97%;
+    
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 150 40% 35%;
+    
+    /* Custom resort colors */
+    --forest-green: 150 40% 35%;
+    --warm-beige: 40 35% 75%;
+    --soft-gold: 45 80% 65%;
+    --nature-dark: 150 25% 20%;
+    --nature-light: 150 20% 90%;
+    
+    /* Chart colors */
+    --chart-1: 150 40% 35%;
+    --chart-2: 40 80% 65%;
+    --chart-3: 45 60% 55%;
+    --chart-4: 150 30% 50%;
+    --chart-5: 40 50% 60%;
+    
+    /* Sidebar */
+    --sidebar-background: 150 25% 20%;
+    --sidebar-foreground: 40 25% 97%;
+    --sidebar-primary: 45 80% 65%;
+    --sidebar-primary-foreground: 150 25% 20%;
+    --sidebar-accent: 150 30% 25%;
+    --sidebar-accent-foreground: 40 25% 97%;
+    --sidebar-border: 150 20% 30%;
+    --sidebar-ring: 45 80% 65%;
+  }
+
+  .dark {
+    --background: 150 25% 8%;
+    --foreground: 40 25% 95%;
+    
+    --card: 150 20% 12%;
+    --card-foreground: 40 25% 95%;
+    
+    --popover: 150 20% 12%;
+    --popover-foreground: 40 25% 95%;
+    
+    --primary: 150 35% 45%;
+    --primary-foreground: 150 25% 8%;
+    
+    --secondary: 40 25% 30%;
+    --secondary-foreground: 40 25% 95%;
+    
+    --muted: 150 15% 18%;
+    --muted-foreground: 40 15% 65%;
+    
+    --accent: 45 50% 25%;
+    --accent-foreground: 40 25% 95%;
+    
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 40 25% 95%;
+    
+    --border: 150 15% 22%;
+    --input: 150 15% 22%;
+    --ring: 150 35% 45%;
+    
+    --chart-1: 150 35% 45%;
+    --chart-2: 40 70% 55%;
+    --chart-3: 45 50% 50%;
+    --chart-4: 150 25% 40%;
+    --chart-5: 40 40% 50%;
+    
+    --sidebar-background: 150 30% 10%;
+    --sidebar-foreground: 40 25% 95%;
+    --sidebar-primary: 45 70% 60%;
+    --sidebar-primary-foreground: 150 30% 10%;
+    --sidebar-accent: 150 25% 15%;
+    --sidebar-accent-foreground: 40 25% 95%;
+    --sidebar-border: 150 20% 18%;
+    --sidebar-ring: 45 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--soft-gold)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+}
