@@ -114,8 +114,8 @@ DECLARE
 BEGIN
   SELECT COUNT(*) INTO user_count FROM profiles;
   
-  -- Extract username from email (remove @miaoda.com)
-  extracted_username := REPLACE(NEW.email, '@miaoda.com', '');
+  -- Extract username from email (remove @serenaparkresort.com)
+  extracted_username := REPLACE(NEW.email, '@serenaparkresort.com', '');
   
   INSERT INTO public.profiles (id, email, username, role)
   VALUES (
